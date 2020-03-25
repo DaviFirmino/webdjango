@@ -1,0 +1,23 @@
+<h1>Blog</h1>
+{{ name }}
+
+<ol>
+{% for item in listatecnologias %}
+
+{% if item == 'Python' %}
+
+<li><b>{{ item }}</b></li>
+{% else %}
+<li>{{ item }}</li>
+{% endif %}
+{% endfor %}
+</ol>
+
+<ul>
+{% for work in work %}
+<h2>{{ work.name }}</h2>
+<h3>{{ work.job }}</h3>
+<p>{{ work.description }}</p>
+<hr>
+{% endfor %}
+</ul

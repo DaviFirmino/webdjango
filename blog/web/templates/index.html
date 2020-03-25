@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap  -->
+	<link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <!-- Main css  -->
+	<link rel="stylesheet" href='{% static "css/style.css" %}'>
+	<!-- Animate css -->
+	<link rel="stylesheet" href='{% static "css/animate.css" %}'>
+    <!-- Google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet'>
+
+	</head>
+	<body>
+
+ 	<!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header pull-left">
+                        <a href="" class="navbar-brand">
+                            <span class="brand-logo"><img src='{% static "images/logo.png" %}' alt=""/></span>
+                        </a>
+                    </div>
+                    <div class="main-nav pull-right">
+                        <div class="button_container toggle">
+                            <span class="top"></span>
+                            <span class="middle"></span>
+                            <span class="bottom"></span>
+                        </div>
+                    </div>
+                    <div class="overlay" id="overlay">
+                        <nav class="overlay-menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="studio.html">Studio</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="project-description.html">Project description</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div><!-- /container -->
+    </nav>
+    <!-- /Navigation -->
+
+
+    <!-- Intro -->
+	<div id="home-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 pull-right">
+						<h1 class="home-heading wow fadeInUp animated">
+                        Os problemas do cotidiano se relativizam e os luxos se 
+                        transformam em coisas básicas: uma taça de chá, um céu estrelado, 
+                        um abraço.
+                        <span>Os viajantes sábios levam somente o 
+                        que se necessita em uma viagem.</span>
+                        </h1>
+						<div class="text-home wow fadeInUp animated">
+                        <strong>Montanhas, Trekking</strong>
+                        </div>
+                        
+					</div>
+				</div>
+			</div>
+	</div>
+    <!-- /Intro -->
+    
+        
+    <!-- Main Banner -->
+    <div class="container">
+         <div class="row">
+           <div class="banner">
+             <div class="vertical-text"><a href="">Saúde Física e Mental</a></div>
+             <img src='{% static "images/banner.jpg" %}' alt=""/>
+             </div>
+            </div>        
+     </div>
+     <!-- /Main Banner -->
+
+       
+     <div class="container">
+           <div class="row">
+             <div class="line-symbol"></div>
+           </div>
+     </div>
+        
+     <!-- Masonry -->
+     <div class="container grid">
+         <div class="row">
+         
+             <div id="photos"> 
+
+                   {% for work in work %}
+                    <figure class="effect-julia">
+                        <a href="{% url 'work_detail' work.id %}">
+                            <img src="{{ work.imagem.url }}" alt="img21"/>
+                            <figcaption>
+                                <div>
+                                    <p>{{ work.name }}</p><br>
+                                    <p>{{ work.job }}</p>
+                                </div>
+                            </figcaption>	
+                        </a>		
+                        </figure>
+                    {% endfor %}
+                 
+                      		
+					
+                
+                    <div class="block1">
+                    <div class="text">Em tempos de quarentena e precauções contra o vírus do Covid-19, 
+                    a população mundial está precisando se reinventar. Então, para seguir a 
+                    recomendação de ficar em casa sem se entediar, uma boa dica é assistir os documentários 
+                    e filmes disponíveis online.
+                    
+                    </div>
+                    <div class="story"><a href="https://altamontanha.com/15-filmes-outdoor-online-para-assistir-durante-a-quarentena/">VEJA MAIS</a></div>
+                    <hr>
+                    </div>
+
+             </div> <!-- /Masonry -->
+         </div><!-- /row -->
+     </div><!-- /container -->
+     
+     
+     <!-- Line -->
+     <div class="container">
+           <div class="row">
+             <div class="line-symbol1"></div>
+           </div>
+     </div>
+     
+
+     <!-- Clients -->
+	 <div id="client-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 pull-right wow fadeInUp animated">
+                    <div class="text-home">Parceiros</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                        <img src='{% static "images/logo1.png" %}' alt=""/></div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                        <img src='{% static "images/logo3.png" %}' alt="" class="client-logos"/> </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                        <img src='{% static "images/logo2.png" %}' alt="" class="client-logos"/></div> 
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                        <img src='{% static "images/logo4.png" %}' alt="" class="client-logos"/> </div>
+					</div>
+				</div>
+			</div>
+	 </div>
+     <!-- /Clients-->
+
+<!-- Contact info -->
+     <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-sm-5 contact-margin wow fadeInUp animated">
+            <h2 class="contact-heading">CONTATO
+            <span>Phone: 212-333-4000</span>
+            <img src='{% static "images/photo10.jpg" %}' alt=""/>
+            </h2>
+          </div>
+          <div class="col-md-7 col-sm-7 contact-margin">
+            <p class="text-contact">O que é realmente importante é simplificar. 
+            O trabalho da maioria seria melhorado imensamente se fizermos uma coisa: livrar-se do estranho.
+</p> 
+<form method="post" action="{% url 'save_form' %}">
+{% csrf_token %}
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Nome:</label>
+                            <input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Please enter your name.">
+                        </div>
+                    </div>
+                   
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" name='email' id="email" required data-validation-required-message="Please enter your email address.">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Mensagem:</label>
+                            <textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        </div>
+                    </div>
+                    <div id="success"></div>
+                    <input type="submit" name="button" id="button" value="Submit" />
+                    
+                </form>
+          </div>
+        </div>
+     </div>
+     <!-- Contact info -->
+    
+     <!-- Footer-->
+     <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+          </div>
+          <div class="col-md-6 col-sm6 section-bg-color">
+            <div class="row">
+              <div class="col-sm-9">
+                <h2>INFO</h2>
+                <p>Address: 22 ST. SOUTH, NEW YORK, NY 10019</p>
+                <p>Phone: 212-333-4000</p>
+                <p>Email: simplestudio@office.com</p>
+              </div><!-- /col-sm-9 -->
+            </div><!--/row-->
+          </div><!-- /col-sm-6 -->
+          <div class="col-md-3 col-sm-3 section-bg-color1">
+            <div class="row">
+              <div class="col-sm-9">
+              <h3>Copyright 2017</h3>
+              <p class="pull-right"><a href=""><img src='{% static "images/twitter.png" %}' alt=""/></a></p>
+              <p class="pull-right icons-f"><a href=""><img src='{% static "images/facebook.png"%}' alt=""/></a></p>
+              </div><!-- /col-sm-9 -->
+            </div><!--/row-->
+          </div><!-- /col-sm-3 -->
+        </div><!-- /row -->
+      </div><!-- /container -->
+    </footer><!-- /footer -->   
+     
+	<!-- jQuery Version 1.11.0 -->
+    <script src='{% static "js/jquery-1.11.0.js" %}'></script>
+    <!-- Boostrap JS -->
+	<script src='{% static "js/bootstrap.min.js" %}'></script>
+    <!-- Masonry JavaScript -->
+    <script src='{% static "js/masonry.js" %}'></script>
+    <!-- Nav JS -->
+	<script src='{% static "js/nav.js" %}'></script>
+    <!-- Smooth scroll JS -->
+    <script src='{% static "js/smoothscroll.js" %}'></script>
+    <!-- Wow JavaScript -->
+    <script src='{% static "js/wow.js" %}'></script>
+    
+    <script>
+    new WOW().init();
+    </script>
+
+
+	</body>
+</html>
+

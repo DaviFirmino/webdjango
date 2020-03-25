@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Home - {{ work.name }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap  -->
+	<link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <!-- Main css  -->
+	<link rel="stylesheet" href='{% static "css/style.css" %}'>
+	<!-- Animate css -->
+	<link rel="stylesheet" href='{% static "css/animate.css" %}'>
+    <!-- Google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet'>
+
+	</head>
+	<body>
+
+ 	<!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header pull-left">
+                        <a href="" class="navbar-brand">
+                            <span class="brand-logo"><a href="{% url 'home_blog' %}"> <img src='{% static "images/logo.png" %}' alt=""/></a></span>
+                        
+                    </div>
+                    <div class="main-nav pull-right">
+                        <div class="button_container toggle">
+                            <span class="top"></span>
+                            <span class="middle"></span>
+                            <span class="bottom"></span>
+                        </div>
+                    </div>
+                    <div class="overlay" id="overlay">
+                        <nav class="overlay-menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="studio.html">Studio</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="project-description.html">Project description</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div><!-- /container -->
+    </nav>
+    <!-- /Navigation -->
+
+
+    <!-- Intro -->
+	<div id="home-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 pull-right">
+						<h1 class="home-heading wow fadeInUp animated">{{ work.name }} <span>{{work.job}}</span></h1>
+						
+                        <img src="{{ work.imagem.url }}" alt="" width="100%"/>
+                        <hr>
+
+                        <p style="text-align:justify"> {{ work.description }} </p>
+                        
+                        </div>
+                        
+					</div>
+				</div>
+			</div>
+	</div>
+    <!-- /Intro --> 
+
+     
+
+    
+     <!-- Footer-->
+     <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+          </div>
+          <div class="col-md-6 col-sm6 section-bg-color">
+            <div class="row">
+              <div class="col-sm-9">
+                <h2>INFO</h2>
+                <p>Address: 22 ST. SOUTH, NEW YORK, NY 10019</p>
+                <p>Phone: 212-333-4000</p>
+                <p>Email: simplestudio@office.com</p>
+              </div><!-- /col-sm-9 -->
+            </div><!--/row-->
+          </div><!-- /col-sm-6 -->
+          <div class="col-md-3 col-sm-3 section-bg-color1">
+            <div class="row">
+              <div class="col-sm-9">
+              <h3>Copyright 2017</h3>
+              <p class="pull-right"><a href=""><img src='{% static "images/twitter.png" %}' alt=""/></a></p>
+              <p class="pull-right icons-f"><a href=""><img src='{% static "images/facebook.png"%}' alt=""/></a></p>
+              </div><!-- /col-sm-9 -->
+            </div><!--/row-->
+          </div><!-- /col-sm-3 -->
+        </div><!-- /row -->
+      </div><!-- /container -->
+    </footer><!-- /footer -->   
+     
+	<!-- jQuery Version 1.11.0 -->
+    <script src='{% static "js/jquery-1.11.0.js" %}'></script>
+    <!-- Boostrap JS -->
+	<script src='{% static "js/bootstrap.min.js" %}'></script>
+    <!-- Masonry JavaScript -->
+    <script src='{% static "js/masonry.js" %}'></script>
+    <!-- Nav JS -->
+	<script src='{% static "js/nav.js" %}'></script>
+    <!-- Smooth scroll JS -->
+    <script src='{% static "js/smoothscroll.js" %}'></script>
+    <!-- Wow JavaScript -->
+    <script src='{% static "js/wow.js" %}'></script>
+    
+    <script>
+    new WOW().init();
+    </script>
+
+
+	</body>
+</html>
+
