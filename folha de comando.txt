@@ -35,6 +35,7 @@ Fazer um commit
 git add .
 git commit -m "First commit"
 git push origin master
+
 git push -u origin master
 
 Add remote 
